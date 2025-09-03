@@ -1,0 +1,36 @@
+.stats {
+  width: 100%;
+  background: #f1f9f1;
+  color: #0f3a4a;
+}
+
+.stats__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.stats__heading {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 28px;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+
+.stats__item { padding: 12px 8px; }
+.stats__value { font-size: 48px; font-weight: 800; transition: transform 250ms ease; }
+.stats__item:hover .stats__value { transform: translateY(-3px) scale(1.03); }
+.stats__label { margin-top: 6px; letter-spacing: 2px; }
+
+@media (max-width: 900px) {
+  .stats__grid { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
+}
+
+

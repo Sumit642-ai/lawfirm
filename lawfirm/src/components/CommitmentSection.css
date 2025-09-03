@@ -1,0 +1,60 @@
+.commit {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.commit__ribbon {
+  text-align: center;
+  color: #0f3a4a;
+  background: #ffffff;
+  padding: 14px 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.commit__bg {
+  background-image: url('/commit.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 70vh;
+  filter: brightness(0.75);
+}
+
+.commit__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 72px;
+  max-width: 960px;
+}
+
+.commit__title {
+  font-size: 56px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.commit__subtitle { font-size: 18px; max-width: 720px; }
+
+.commit__cta {
+  margin-top: 22px;
+  background: #ffffff;
+  color: #0f3a4a;
+  border: none;
+  padding: 16px 22px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .commit__title { font-size: 38px; }
+  .commit__bg { height: 64vh; }
+  .commit__content { padding-left: 24px; }
+}
+
+
