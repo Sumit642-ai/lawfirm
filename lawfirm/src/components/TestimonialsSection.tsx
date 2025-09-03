@@ -1,4 +1,5 @@
 import './TestimonialsSection.css'
+import { useEffect, useRef } from 'react'
 
 type Testimonial = {
   name: string
@@ -42,8 +43,21 @@ function Stars({ n }: { n: number }) {
 }
 
 function TestimonialsSection() {
+  const ref = useRef<HTMLElement | null>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        el.classList.add('is-visible')
+        io.disconnect()
+      }
+    }, { threshold: 0.2 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
-    <section className="t">
+    <section className="t reveal" ref={ref}>
       <div className="t__container">
         <p className="t__eyebrow">WHAT PEOPLE SAY ABOUT US</p>
         <h2 className="t__heading">Client Testimonials</h2>

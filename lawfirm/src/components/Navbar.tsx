@@ -1,15 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Navbar.css'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev)
   }
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${scrolled ? 'is-solid' : 'is-transparent'}`}>
       <div className="navbar__container">
         <a href="/" className="navbar__brand">lawfirm</a>
 
@@ -37,6 +45,7 @@ function Navbar() {
           <a href="#insights" className="navbar__link">Insights</a>
           <a href="#contact" className="navbar__link">Contact Us</a>
           <button className="navbar__search" aria-label="Search">🔍</button>
+          <a href="#consult" className="navbar__cta btn-primary">Book Consultation</a>
         </nav>
       </div>
     </header>

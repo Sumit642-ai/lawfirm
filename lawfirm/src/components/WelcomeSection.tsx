@@ -1,8 +1,22 @@
 import './WelcomeSection.css'
+import { useEffect, useRef } from 'react'
 
 function WelcomeSection() {
+  const ref = useRef<HTMLElement | null>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        el.classList.add('is-visible')
+        io.disconnect()
+      }
+    }, { threshold: 0.15 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
-    <section className="welcome">
+    <section className="welcome reveal" ref={ref}>
       <div className="welcome__container">
         <div className="welcome__text">
           <p className="welcome__eyebrow">YOUR PARTNER IN EVERY MATTER</p>

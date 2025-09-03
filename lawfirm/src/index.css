@@ -1,11 +1,37 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --leading-normal: 1.6;
+  --radius-sm: 6px;
+  --radius-md: 12px;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Container */
+  --container-w: 1200px;
+  --page-x: 24px;
+  --section-y: 72px;
+
+  /* Color palette */
+  --bg: #ffffff;
+  --text: #1e2930;
+  --muted: #5b6d78;
+  --brand: #0f3a4a;
+  --brand-600: #0a2a36;
+  --brand-200: #c7e0e8;
+  --accent: #c7d84c;
+  --surface: #f6f9fb;
+  --border: #e6ecf0;
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+
+  /* Components */
+  --navbar-height: 72px;
+
+  font-family: var(--font-sans);
+  line-height: var(--leading-normal);
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,60 +39,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+a { color: var(--brand); text-decoration: none; }
+a:hover { color: var(--brand-600); }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
+body { margin: 0; min-width: 320px; min-height: 100vh; }
 
-html, body, #root {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-}
+html, body, #root { width: 100vw; min-height: 100vh; overflow-x: hidden; }
+h1, h2, h3, p, .section, .container { scroll-margin-top: var(--navbar-height); }
+body { padding-top: var(--navbar-height); }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+h1 { font-size: 3rem; line-height: 1.1; margin: 0; }
+h2 { font-size: 2rem; margin: 0; }
+h3 { font-size: 1.25rem; margin: 0; }
+p { margin: 0; }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* Utilities */
+.container { max-width: var(--container-w); margin: 0 auto; padding: 0 var(--page-x); }
+.section { padding: var(--section-y) 0; }
+.eyebrow { letter-spacing: 2px; text-transform: uppercase; color: var(--brand); font-weight: 700; }
+.muted { color: var(--muted); }
+.surface { background: var(--surface); }
+.card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+button { border-radius: var(--radius-sm); border: 1px solid transparent; padding: 12px 16px; font: inherit; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+button:focus-visible { outline: 3px solid var(--brand-200); outline-offset: 2px; }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); background: var(--brand-600); }
+.btn-secondary { background: #ffffff; color: var(--brand); border: 1px solid var(--border); }
+.btn-secondary:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+/* Scrollbar light tune */
+* { scrollbar-width: thin; scrollbar-color: #cbd5db transparent; }
+*::-webkit-scrollbar { height: 8px; width: 8px; }
+*::-webkit-scrollbar-thumb { background: #cbd5db; border-radius: 8px; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal-stagger > * { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--i, 0) * 90ms); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: none; }

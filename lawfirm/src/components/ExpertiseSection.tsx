@@ -1,4 +1,5 @@
 import './ExpertiseSection.css'
+import { useEffect, useRef } from 'react'
 
 const items = [
   { img: '/ex1.jpg', title: 'IMMIGRATION LAW', sub: 'Immigration Services' },
@@ -12,14 +13,27 @@ const items = [
 ]
 
 function ExpertiseSection() {
+  const ref = useRef<HTMLElement | null>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        el.classList.add('is-visible')
+        io.disconnect()
+      }
+    }, { threshold: 0.2 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
-    <section className="expertise">
+    <section className="expertise reveal-stagger" ref={ref}>
       <div className="expertise__container">
         <h2 className="expertise__heading">Areas We Cover</h2>
         <p className="expertise__sub">Clear, commercial and human advice – wherever you need it most.</p>
         <div className="expertise__grid">
-          {items.map((it) => (
-            <a key={it.title} href="#" className="expertise__card">
+          {items.map((it, i) => (
+            <a key={it.title} href="#" className="expertise__card" style={{ ['--i' as any]: i }}>
               <div className="expertise__image" style={{ backgroundImage: `url(${it.img})` }} />
               <div className="expertise__label">
                 <div className="expertise__title">{it.title}</div>
