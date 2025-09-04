@@ -1,20 +1,20 @@
 .t { background: #ffffff; }
-.t__container { max-width: var(--container-w); margin: 0 auto; padding: var(--section-y) var(--page-x); }
-.t__eyebrow { text-align: center; letter-spacing: 3px; color: #a4873e; font-weight: 700; text-transform: uppercase; }
-.t__heading { text-align: center; font-size: 40px; margin: 8px 0 28px; }
+.t__container { max-width: var(--container-w); margin: 0 auto; padding: var(--section-y) var(--page-x); text-align: center; }
 
-.t__list { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 1fr); gap: 20px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; }
-.t__list::-webkit-scrollbar { height: 8px; }
-.t__list::-webkit-scrollbar-thumb { background: #cbd5db; border-radius: 8px; }
+/* Team styling to match screenshot */
+.team__heading { font-size: 34px; margin: 0 0 6px; color: #5a4738; }
+.team__sub { color: #7b868e; margin-bottom: 28px; }
+.team__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.team__card { padding: 12px 8px 0; }
+.team__photo { height: 300px; background: radial-gradient(ellipse at center, #d9dbde 0%, #d9dbde 40%, #cfd3d6 40%, #cfd3d6 100%); mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M100 40c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40zm0 96c42 0 64 20 64 28v16H36v-16c0-8 22-28 64-28z"/></svg>') center/60% 80% no-repeat; border-radius: 12px; opacity: .6; }
+.team__name { font-size: 18px; margin: 12px 0 4px; }
+.team__role { color: #a4873e; font-size: 13px; }
+.team__social { display: flex; justify-content: center; gap: 16px; margin: 12px 0 0; color: #222; }
+.team__social a { color: inherit; text-decoration: none; font-weight: 700; opacity: .8; }
+.team__social a:hover { opacity: 1; }
 
-.t__card { border: 1px solid var(--border); border-radius: 14px; padding: 18px; box-shadow: var(--shadow-sm); scroll-snap-align: start; }
-.t__card-h { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.t__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 700; }
-.t__name { font-weight: 700; }
-.t__date { color: #65727a; font-size: 12px; }
-.t__stars { color: #f0c419; letter-spacing: 3px; margin: 6px 0 8px; }
-.t__text { color: var(--text); line-height: 1.7; }
-
-@media (max-width: 900px) { .t__heading { font-size: 28px; } .t__list { grid-auto-columns: 86%; } }
+@media (max-width: 900px) {
+  .team__grid { grid-template-columns: 1fr; }
+}
 
 

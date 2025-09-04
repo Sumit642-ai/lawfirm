@@ -1,40 +1,37 @@
-.welcome { width: 100%; background: #ffffff; }
+.welcome { width: 100%; background: transparent; position: relative; }
 
-.welcome__container { max-width: var(--container-w); margin: 0 auto; padding: var(--section-y) var(--page-x); display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.welcome__panel { background: #ffffff; border-radius: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border); margin: 0 var(--page-x); position: relative; }
+
+.welcome__container { max-width: var(--container-w); margin: 0 auto; padding: 32px 40px; display: grid; grid-template-columns: 1.1fr 580px; gap: 40px; align-items: center; }
 
 .welcome__eyebrow { color: var(--brand); letter-spacing: 2px; font-weight: 700; text-transform: uppercase; }
 
-.welcome__title { font-size: 44px; margin: 12px 0 16px; }
+.welcome__title { font-size: 28px; margin: 8px 0 16px; color: #5a4738; }
 
-.welcome__para { font-size: 18px; color: var(--text); line-height: 1.8; }
+.welcome__para { font-size: 14px; color: var(--text); line-height: 1.9; }
 
-.welcome__media {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-}
+.welcome__media { position: relative; display: flex; justify-content: flex-end; }
 
-.welcome__image { width: 85%; border-radius: var(--radius-md); display: block; transition: transform 300ms ease, box-shadow 300ms ease; box-shadow: var(--shadow-md); }
+.welcome__image { width: 100%; border-radius: 18px; display: block; box-shadow: var(--shadow-md); background: #fff; padding: 0; }
 .welcome__image:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 18px 36px rgba(0,0,0,0.2);
 }
 
-.welcome__card { position: absolute; left: 24px; right: 24px; bottom: -40px; background: #ffffff; border-radius: 18px; padding: 24px 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+.welcome__card { display: none; }
 
-.welcome__card-title {
-  font-weight: 700;
-}
+.welcome__card-title { font-weight: 700; }
 
 .welcome__stars { color: #f0c419; margin-left: 8px; }
 
-.welcome__review { color: var(--text); }
+.welcome__review { color: var(--text); font-size: 14px; }
 
 .welcome__author { font-weight: 700; margin-top: 12px; }
 .welcome__meta { color: #3b6b7a; font-size: 14px; }
 
 @media (max-width: 980px) {
-  .welcome__container { grid-template-columns: 1fr; padding: 48px 16px; }
+  .welcome__panel { margin: 0 16px; }
+  .welcome__container { grid-template-columns: 1fr; padding: 24px 16px; margin: 0 auto; }
   .welcome__card { position: static; margin-top: 16px; }
 }
 

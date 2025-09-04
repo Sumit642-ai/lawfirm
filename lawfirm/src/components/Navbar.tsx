@@ -10,7 +10,7 @@ function Navbar() {
   }
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => setScrolled(window.scrollY > 8)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'is-solid' : 'is-transparent'}`}>
       <div className="navbar__container">
-        <a href="/" className="navbar__brand">lawfirm</a>
+        <a href="#home" className="navbar__brand">Law Firm</a>
 
         <button
           className="navbar__toggle"
@@ -38,15 +38,16 @@ function Navbar() {
           className={`navbar__nav ${isOpen ? 'is-open' : ''}`}
           aria-label="Primary"
         >
-          <a href="#about" className="navbar__link">About Us</a>
-          <a href="#services" className="navbar__link has-caret">Services</a>
-          <a href="#people" className="navbar__link">Our People</a>
-          <a href="#careers" className="navbar__link">Careers</a>
-          <a href="#insights" className="navbar__link">Insights</a>
-          <a href="#contact" className="navbar__link">Contact Us</a>
-          <button className="navbar__search" aria-label="Search">🔍</button>
-          <a href="#consult" className="navbar__cta btn-primary">Book Consultation</a>
+          <a href="#home" className="navbar__link">Home</a>
+          <a href="#services" className="navbar__link">Services</a>
+          <a href="#about" className="navbar__link">About us</a>
+          <a href="#contact" className="navbar__link">Contact us</a>
         </nav>
+
+        <div className="navbar__phone">
+          <span className="navbar__phone-icon" aria-hidden>☎</span>
+          <span className="navbar__phone-text">(257) 388-6895</span>
+        </div>
       </div>
     </header>
   )

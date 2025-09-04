@@ -1,46 +1,13 @@
 import './TestimonialsSection.css'
 import { useEffect, useRef } from 'react'
 
-type Testimonial = {
-  name: string
-  date: string
-  text: string
-  rating: number
-}
+type Attorney = { name: string; role: string }
 
-const DATA: Testimonial[] = [
-  {
-    name: 'yanPing Wang',
-    date: '2024-04-23',
-    text:
-      'I would like to thank Farani Taylor and in particular Soneela Chowdhry who helped me with my immigration matter. Very professional and supportive throughout.',
-    rating: 5
-  },
-  {
-    name: 'Taimoor Khan',
-    date: '2024-04-20',
-    text:
-      'One of the best law firms in England. Mr Khalid Mehmood is one of the best solicitors in this firm. Highly recommended.',
-    rating: 5
-  },
-  {
-    name: 'Letspace',
-    date: '2024-04-18',
-    text:
-      'Very good service, well recommended. The team were responsive and helpful from start to finish.',
-    rating: 5
-  }
+const TEAM: Attorney[] = [
+  { name: 'Jackson Bauer', role: 'Finance Lawyer' },
+  { name: 'Stephanie Reilly', role: 'Criminal Defence Lawyer' },
+  { name: 'Matthew Webb', role: 'Tax Lawyer' }
 ]
-
-function Stars({ n }: { n: number }) {
-  return (
-    <div className="t__stars" aria-label={`${n} star rating`}>
-      {Array.from({ length: n }).map((_, i) => (
-        <span key={i}>★</span>
-      ))}
-    </div>
-  )
-}
 
 function TestimonialsSection() {
   const ref = useRef<HTMLElement | null>(null)
@@ -59,20 +26,20 @@ function TestimonialsSection() {
   return (
     <section className="t reveal" ref={ref}>
       <div className="t__container">
-        <p className="t__eyebrow">WHAT PEOPLE SAY ABOUT US</p>
-        <h2 className="t__heading">Client Testimonials</h2>
-        <div className="t__list" role="list">
-          {DATA.map((d) => (
-            <article className="t__card" role="listitem" key={d.name + d.date}>
-              <header className="t__card-h">
-                <div className="t__avatar" aria-hidden>{d.name[0]}</div>
-                <div>
-                  <div className="t__name">{d.name}</div>
-                  <div className="t__date">{d.date}</div>
-                </div>
-              </header>
-              <Stars n={d.rating} />
-              <p className="t__text">{d.text}</p>
+        <h2 className="team__heading">Our Attorneys</h2>
+        <p className="team__sub">Varius quisque odio mauris lectus consequat sedretitum purus feugiat volutpat pell</p>
+        <div className="team__grid">
+          {TEAM.map((m) => (
+            <article className="team__card" key={m.name}>
+              <div className="team__photo" aria-hidden />
+              <h3 className="team__name">{m.name}</h3>
+              <p className="team__role">{m.role}</p>
+              <div className="team__social">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="X">x</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="Send">➤</a>
+              </div>
             </article>
           ))}
         </div>

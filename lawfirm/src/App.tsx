@@ -8,6 +8,8 @@ import CommitmentSection from './components/CommitmentSection'
 import StatsStrip from './components/StatsStrip'
 import TestimonialsSection from './components/TestimonialsSection'
 import AboutFooter from './components/AboutFooter'
+import ClientSaysSection from './components/ClientSaysSection'
+import ServicesGridSection from './components/ServicesGridSection'
 
 function App() {
 
@@ -16,10 +18,13 @@ function App() {
       <Navbar />
       <Hero />
       <WelcomeSection />
-      <ExpertiseSection />
+   
       <CommitmentSection />
+      <ServicesGridSection />
       <StatsStrip />
+      
       <TestimonialsSection />
+      <ClientSaysSection />
       <AboutFooter />
     </>
   )
