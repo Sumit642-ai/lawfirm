@@ -1,4 +1,4 @@
-.stats { width: 100%; background: #f1f9f1; color: var(--brand); }
+.stats { width: 100%; background: #FFF5E8; color: var(--brand); }
 
 .stats__container { max-width: var(--container-w); margin: 0 auto; padding: 48px var(--page-x) 64px; }
 

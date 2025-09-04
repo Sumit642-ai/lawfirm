@@ -11,14 +11,14 @@
   --section-y: 72px;
 
   /* Color palette */
-  --bg: #ffffff;
+  --bg: #FFF5E8;
   --text: #1e2930;
   --muted: #5b6d78;
   --brand: #0f3a4a;
   --brand-600: #0a2a36;
   --brand-200: #c7e0e8;
   --accent: #c7d84c;
-  --surface: #f6f9fb;
+  --surface: #FFF5E8;
   --border: #e6ecf0;
 
   /* Elevation */
@@ -59,13 +59,13 @@ p { margin: 0; }
 .eyebrow { letter-spacing: 2px; text-transform: uppercase; color: var(--brand); font-weight: 700; }
 .muted { color: var(--muted); }
 .surface { background: var(--surface); }
-.card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+.card { background: #FFF5E8; border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
 
 button { border-radius: var(--radius-sm); border: 1px solid transparent; padding: 12px 16px; font: inherit; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
 button:focus-visible { outline: 3px solid var(--brand-200); outline-offset: 2px; }
 .btn-primary { background: var(--brand); color: #fff; }
 .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); background: var(--brand-600); }
-.btn-secondary { background: #ffffff; color: var(--brand); border: 1px solid var(--border); }
+.btn-secondary { background: #FFF5E8; color: var(--brand); border: 1px solid var(--border); }
 .btn-secondary:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
 
 /* Scrollbar light tune */
