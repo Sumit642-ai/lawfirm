@@ -1,5 +1,6 @@
 import './ServicesGridSection.css'
-import { useCallback, useEffect, useRef, ReactElement } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
+import type { ReactElement } from 'react'
 
 type Area = { title: string; text: string; icon: ReactElement }
 
