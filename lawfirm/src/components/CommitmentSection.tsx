@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import './CommitmentSection.css'
 
 function CommitmentSection() {
+  const navigate = useNavigate()
+
+  const handleContactClick = () => {
+    navigate('/contact')
+  }
+
   return (
     <section className="commit">
       <div className="commit__ribbon">
@@ -17,7 +24,7 @@ function CommitmentSection() {
             More than 40,000 clients have benefited from Farani Taylor's exceptional legal services.
           </p>
           <div className="commit__cta">
-            <a href="#consult" className="commit__cta-btn">SCHEDULE YOUR INITIAL CONSULTATION NOW</a>
+            <button onClick={handleContactClick} className="commit__cta-btn">SCHEDULE YOUR INITIAL CONSULTATION NOW</button>
           </div>
         </div>
       </div>

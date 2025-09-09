@@ -14,7 +14,7 @@
 .commit__subtitle { font-size: 18px; max-width: 800px; text-shadow: 0 1px 12px rgba(0,0,0,0.35); opacity: .98; }
 
 .commit__cta { margin-top: 24px; }
-.commit__cta-btn { display: block; width: min(92vw, 860px); background: #FFF5E8; color: var(--brand); border: 1px solid var(--border); padding: 18px 24px; font-weight: 800; border-radius: 999px; text-align: center; letter-spacing: .5px; }
+.commit__cta-btn { display: block; width: min(92vw, 860px); background: #FFF5E8; color: var(--brand); border: 1px solid var(--border); padding: 18px 24px; font-weight: 800; border-radius: 999px; text-align: center; letter-spacing: .5px; cursor: pointer; }
 .commit__cta-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
 
 @media (max-width: 1100px) { .commit__title { font-size: 44px; } .commit__bg { height: 64vh; } .commit__inner { margin-left: 24px; } }

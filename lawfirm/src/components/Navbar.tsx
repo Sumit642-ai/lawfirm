@@ -1,12 +1,38 @@
 import { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev)
+  }
+
+  const scrollToSection = (sectionId: string) => {
+    // Close mobile menu
+    setIsOpen(false)
+    
+    // If we're on a service detail page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/')
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      // We're already on home page, just scroll
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
   }
 
   useEffect(() => {
@@ -19,7 +45,12 @@ function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'is-solid' : 'is-transparent'}`}>
       <div className="navbar__container">
-        <a href="#home" className="navbar__brand">Law Firm</a>
+        <button 
+          onClick={() => scrollToSection('home')} 
+          className="navbar__brand"
+        >
+          Law Firm
+        </button>
 
         <button
           className="navbar__toggle"
@@ -38,10 +69,10 @@ function Navbar() {
           className={`navbar__nav ${isOpen ? 'is-open' : ''}`}
           aria-label="Primary"
         >
-          <a href="#home" className="navbar__link">Home</a>
-          <a href="#services" className="navbar__link">Services</a>
-          <a href="#about" className="navbar__link">About us</a>
-          <a href="#contact" className="navbar__link">Contact us</a>
+          <button onClick={() => scrollToSection('home')} className="navbar__link">Home</button>
+          <button onClick={() => scrollToSection('services')} className="navbar__link">Services</button>
+          <button onClick={() => scrollToSection('about')} className="navbar__link">About us</button>
+          <button onClick={() => scrollToSection('contact')} className="navbar__link">Contact us</button>
         </nav>
 
         <div className="navbar__phone">

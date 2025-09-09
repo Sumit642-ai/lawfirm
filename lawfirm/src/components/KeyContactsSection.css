@@ -1,0 +1,226 @@
+.key-contacts {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.key-contacts__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--page-x);
+}
+
+.key-contacts__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.key-contacts__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+
+.key-contacts__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #dee2e6;
+}
+
+.key-contacts__description {
+  font-size: 16px;
+  color: #5a6c7d;
+  margin: 0 0 30px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.key-contacts__phone {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.key-contacts__cta {
+  background: #0f3a4a;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.key-contacts__cta:hover {
+  background: #0a2a36;
+}
+
+.key-contacts__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.key-contacts__card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.key-contacts__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.key-contacts__card-header {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 30px 20px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.key-contacts__image-container {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.key-contacts__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.key-contacts__social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.key-contacts__social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0f3a4a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  font-size: 12px;
+}
+
+.key-contacts__social-link:hover {
+  background: #0a2a36;
+}
+
+.key-contacts__social-icon {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.key-contacts__card-content {
+  background: #f8f9fa;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.key-contacts__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.key-contacts__position {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.key-contacts__profile-btn {
+  background: transparent;
+  color: #0f3a4a;
+  border: 2px solid #0f3a4a;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.key-contacts__profile-btn:hover {
+  background: #0f3a4a;
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .key-contacts__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .key-contacts__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .key-contacts {
+    padding: 60px 0;
+  }
+  
+  .key-contacts__header {
+    margin-bottom: 40px;
+  }
+  
+  .key-contacts__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 400px;
+  }
+  
+  .key-contacts__title {
+    font-size: 1.75rem;
+  }
+  
+  .key-contacts__description {
+    font-size: 14px;
+  }
+  
+  .key-contacts__card-header {
+    padding: 25px 15px 15px;
+  }
+  
+  .key-contacts__card-content {
+    padding: 20px 15px;
+  }
+}

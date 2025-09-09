@@ -1,4 +1,5 @@
 import { } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -9,21 +10,42 @@ import TestimonialsSection from './components/TestimonialsSection'
 import AboutFooter from './components/AboutFooter'
 import ClientSaysSection from './components/ClientSaysSection'
 import ServicesGridSection from './components/ServicesGridSection'
+import ServiceDetailPage from './components/ServiceDetailPage'
+import ContactFormPage from './components/ContactFormPage'
 
-function App() {
-
+function HomePage() {
   return (
     <>
-      <Navbar />
-      <Hero />
+      <div id="home">
+        <Hero />
+      </div>
       <TrustedByManySection />
-      <CommitmentSection />
-      <ServicesGridSection />
+      <div id="contact">
+        <CommitmentSection />
+      </div>
+      <div id="services">
+        <ServicesGridSection />
+      </div>
       <StatsStrip />
       <TestimonialsSection />
       <ClientSaysSection />
-      <AboutFooter />
+      <div id="about">
+        <AboutFooter />
+      </div>
     </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
+        <Route path="/contact" element={<ContactFormPage />} />
+      </Routes>
+    </Router>
   )
 }
 

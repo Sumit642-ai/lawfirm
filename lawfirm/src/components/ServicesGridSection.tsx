@@ -1,5 +1,6 @@
 import './ServicesGridSection.css'
 import { useCallback, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import type { ReactElement } from 'react'
 
 type Area = { title: string; text: string; icon: ReactElement }
@@ -49,6 +50,10 @@ const AREAS: Area[] = [
   { title: 'Corporate Law', text: 'Adipiscing nam neque hendrerit nec pellentesque diam a. Varius quisque odio mauris lectus con..', icon: IconBrief }
 ]
 
+const getServiceSlug = (title: string) => {
+  return title.toLowerCase().replace(/\s+/g, '-')
+}
+
 function ServicesGridSection() {
   const gridRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
@@ -87,14 +92,20 @@ function ServicesGridSection() {
       <div className="svc__container">
         <div className="svc__grid reveal-stagger" ref={gridRef}>
           {AREAS.map((a, i) => (
-            <article className="svc__item" style={{ ['--i' as any]: i }} key={a.title} onMouseMove={handleMove} onMouseLeave={reset}>
-              <div className="svc__icon">{a.icon}</div>
-              <h3 className="svc__title">{a.title}</h3>
-              <p className="svc__text">{a.text}</p>
-              <a className="svc__more" href="#services" aria-label={`Learn more about ${a.title}`}>
-                Learn more <span className="svc__arrow">→</span>
-              </a>
-            </article>
+            <Link 
+              to={`/service/${getServiceSlug(a.title)}`} 
+              className="svc__item-link" 
+              key={a.title}
+            >
+              <article className="svc__item" style={{ ['--i' as any]: i }} onMouseMove={handleMove} onMouseLeave={reset}>
+                <div className="svc__icon">{a.icon}</div>
+                <h3 className="svc__title">{a.title}</h3>
+                <p className="svc__text">{a.text}</p>
+                <div className="svc__more">
+                  Learn more <span className="svc__arrow">→</span>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
