@@ -1,7 +1,7 @@
 import './ServicesGridSection.css'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, ReactElement } from 'react'
 
-type Area = { title: string; text: string; icon: JSX.Element }
+type Area = { title: string; text: string; icon: ReactElement }
 
 const IconCourt = (
   <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
