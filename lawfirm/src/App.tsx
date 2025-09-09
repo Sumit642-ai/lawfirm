@@ -2,7 +2,7 @@ import { } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import TrustedSection from './components/TrustedSection'
+import TrustedByManySection from './components/TrustedByManySection'
 import CommitmentSection from './components/CommitmentSection'
 import StatsStrip from './components/StatsStrip'
 import TestimonialsSection from './components/TestimonialsSection'
@@ -16,7 +16,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <TrustedSection />
+      <TrustedByManySection />
       <CommitmentSection />
       <ServicesGridSection />
       <StatsStrip />

@@ -46,7 +46,7 @@ body { margin: 0; min-width: 320px; min-height: 100vh; }
 
 html, body, #root { width: 100vw; min-height: 100vh; overflow-x: hidden; }
 h1, h2, h3, p, .section, .container { scroll-margin-top: var(--navbar-height); }
-body { padding-top: var(--navbar-height); }
+/* body { padding-top: var(--navbar-height); } */
 
 h1 { font-size: 3rem; line-height: 1.1; margin: 0; }
 h2 { font-size: 2rem; margin: 0; }
