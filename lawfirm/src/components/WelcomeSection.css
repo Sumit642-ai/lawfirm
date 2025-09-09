@@ -1,6 +1,6 @@
 .welcome { width: 100%; background: transparent; position: relative; }
 
-.welcome__panel { background: #FFF5E8; border-radius: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border); margin: 0 var(--page-x); position: relative; }
+.welcome__panel { background: #ffffff; border-radius: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border); margin: 0 var(--page-x); position: relative; }
 
 .welcome__container { max-width: var(--container-w); margin: 0 auto; padding: 32px 40px; display: grid; grid-template-columns: 1.1fr 580px; gap: 40px; align-items: center; }
 
@@ -12,7 +12,7 @@
 
 .welcome__media { position: relative; display: flex; justify-content: flex-end; }
 
-.welcome__image { width: 100%; border-radius: 18px; display: block; box-shadow: var(--shadow-md); background: #FFF5E8; padding: 0; }
+.welcome__image { width: 100%; border-radius: 18px; display: block; box-shadow: var(--shadow-md); background: #ffffff; padding: 0; }
 .welcome__image:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 18px 36px rgba(0,0,0,0.2);

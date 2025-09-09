@@ -162,6 +162,78 @@ function ServiceDetailPage() {
                 <p className="service-detail__text">{section.text}</p>
               </div>
             ))}
+
+            <div className="service-detail__benefits">
+              <h3 className="service-detail__subheading">Key Benefits</h3>
+              <ul className="service-detail__benefits-grid">
+                <li className="service-detail__benefit">Tailored legal advice aligned to your goals</li>
+                <li className="service-detail__benefit">Responsive communication and clear next steps</li>
+                <li className="service-detail__benefit">Dedicated senior lawyer oversight</li>
+                <li className="service-detail__benefit">Transparent pricing with no surprises</li>
+                <li className="service-detail__benefit">Multi‑lingual team where required</li>
+                <li className="service-detail__benefit">Strong track record across complex matters</li>
+              </ul>
+            </div>
+
+            <div className="service-detail__process">
+              <h3 className="service-detail__subheading">Our Process</h3>
+              <ol className="service-detail__process-steps">
+                <li className="service-detail__step">
+                  <span className="service-detail__step-num">1</span>
+                  <div className="service-detail__step-body">
+                    <h4 className="service-detail__step-title">Initial Consultation</h4>
+                    <p className="service-detail__step-text">We review your objectives and set a clear plan of action.</p>
+                  </div>
+                </li>
+                <li className="service-detail__step">
+                  <span className="service-detail__step-num">2</span>
+                  <div className="service-detail__step-body">
+                    <h4 className="service-detail__step-title">Case Preparation</h4>
+                    <p className="service-detail__step-text">We gather documents and prepare robust submissions and strategy.</p>
+                  </div>
+                </li>
+                <li className="service-detail__step">
+                  <span className="service-detail__step-num">3</span>
+                  <div className="service-detail__step-body">
+                    <h4 className="service-detail__step-title">Representation</h4>
+                    <p className="service-detail__step-text">We act on your behalf, keeping you informed at each milestone.</p>
+                  </div>
+                </li>
+                <li className="service-detail__step">
+                  <span className="service-detail__step-num">4</span>
+                  <div className="service-detail__step-body">
+                    <h4 className="service-detail__step-title">Resolution</h4>
+                    <p className="service-detail__step-text">We finalise the matter and advise on any follow‑up considerations.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div className="service-detail__documents">
+              <h3 className="service-detail__subheading">Documents We May Need</h3>
+              <ul className="service-detail__list">
+                <li>Passport or photo ID</li>
+                <li>Proof of address (utility bill or bank statement)</li>
+                <li>Supporting contracts, correspondence, or financial records</li>
+                <li>Any previous applications, orders, or court documents</li>
+              </ul>
+            </div>
+
+            <div className="service-detail__faq">
+              <h3 className="service-detail__subheading">Frequently Asked Questions</h3>
+              <details className="service-detail__faq-item">
+                <summary>How long will my matter take?</summary>
+                <p>Timelines depend on complexity and third parties. We provide an estimated schedule after the initial review and update you as the case progresses.</p>
+              </details>
+              <details className="service-detail__faq-item">
+                <summary>How do fees work?</summary>
+                <p>We agree fees upfront (fixed or hourly as appropriate) and provide clear scopes, so you always know what to expect.</p>
+              </details>
+              <details className="service-detail__faq-item">
+                <summary>Can you work remotely?</summary>
+                <p>Yes. We can meet in person or remotely and securely share documents according to your preference.</p>
+              </details>
+            </div>
           </div>
         </div>
         

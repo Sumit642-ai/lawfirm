@@ -79,7 +79,7 @@ function StatItem({ label, value, suffix }: Stat) {
 
   return (
     <div className={`stats__item ${visible ? 'animate' : ''}`} ref={ref}>
-      <div className="stats__value">{formatted}</div>
+      <div className="stats__value">+{formatted}</div>
       <div className="stats__label">{label}</div>
     </div>
   )

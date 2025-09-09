@@ -1,6 +1,6 @@
 
 .navbar { background-color: transparent; color: #ffffff; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; width: 100%; height: var(--navbar-height); box-shadow: none; backdrop-filter: none; }
-.navbar.is-solid { background-color: rgba(255,245,232,0.95); color: var(--text); box-shadow: var(--shadow-sm); backdrop-filter: saturate(120%) blur(6px); }
+.navbar.is-solid { background-color: rgba(255,255,255,0.95); color: var(--text); box-shadow: var(--shadow-sm); backdrop-filter: saturate(120%) blur(6px); }
 .navbar.is-transparent { background-color: transparent; color: #ffffff; box-shadow: none; backdrop-filter: none; }
 
 .navbar__container { max-width: var(--container-w); margin: 0 auto; padding: 0 var(--page-x); height: var(--navbar-height); display: flex; align-items: center; justify-content: space-between; }
@@ -39,7 +39,7 @@
 
 @media (max-width: 820px) {
   .navbar__toggle { display: inline-block; }
-  .navbar__nav { position: absolute; top: var(--navbar-height); left: 0; right: 0; background: #FFF5E8; flex-direction: column; gap: 16px; padding: 16px 24px 24px; border-bottom: 1px solid var(--border); display: none; }
+  .navbar__nav { position: absolute; top: var(--navbar-height); left: 0; right: 0; background: #ffffff; flex-direction: column; gap: 16px; padding: 16px 24px 24px; border-bottom: 1px solid var(--border); display: none; }
   .navbar__nav.is-open { display: flex; }
   .navbar__phone { display: none; }
 }

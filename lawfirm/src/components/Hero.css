@@ -9,7 +9,8 @@
 .hero__subtitle { max-width: 680px; font-size: 14px; opacity: 0.96; text-shadow: 0 1px 12px rgba(0,0,0,0.3); }
 
 .hero__cta { margin-top: 22px; }
-.hero__enquiry { background: #5c4332; border: 1px solid rgba(255,255,255,0.1); padding: 12px 18px; }
+.hero__enquiry { background: #5c4332; border: 1px solid rgba(255,255,255,0.1); padding: 12px 18px; color: #ffffff; }
+.hero__enquiry:hover { color: #ffffff; }
 
 @media (max-width: 820px) {
   .hero { min-height: 100vh; }

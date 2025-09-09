@@ -1,4 +1,4 @@
-.t { background: #FFF5E8; }
+.t { background: #ffffff; }
 .t__container { max-width: var(--container-w); margin: 0 auto; padding: var(--section-y) var(--page-x); text-align: center; }
 
 /* Team styling to match screenshot */
